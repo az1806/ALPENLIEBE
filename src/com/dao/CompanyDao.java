@@ -1,5 +1,9 @@
 package com.dao;
 
-public interface CompanyDao {
+import com.entity.Company;
 
+public interface CompanyDao {
+int updateCompany(Company com);
+	
+	Company queryCompany();
 }

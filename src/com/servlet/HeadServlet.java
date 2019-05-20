@@ -12,7 +12,7 @@ import com.dao.CompanyDao;
 import com.dao.impl.CompanyDaoImpl;
 import com.entity.Company;
 
-public class IndexServlet extends HttpServlet {
+public class HeadServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -28,13 +28,13 @@ public class IndexServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		CompanyDao comDao = new CompanyDaoImpl();
-
+		System.out.println("½øÈë HeadServlet");
+		//jdbc company 
+		
+		CompanyDao comDao=new CompanyDaoImpl();
 		Company com = comDao.queryCompany();
-
+		
 		request.setAttribute("company", com);
-
 		request.getRequestDispatcher("/header.jsp").forward(request, response);
 	}
 

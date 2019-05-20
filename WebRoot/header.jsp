@@ -40,7 +40,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="header-logo "><img src="images/logo.png" alt=""></div>
             <div class="header-title div-inline">
                 <strong>
-                	
+                	 <% Company com = (Company) request.getAttribute("company"); %>
+               		 <%= com.getName() %>
                 </strong>
                 <span>www.cssmoban.com</span>
             </div>
