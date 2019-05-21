@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="zh-cn">
 <head>
-    <title>爱在阿尔卑斯</title>
+    <title>某某家具设计公司企业官网-模板之家</title>
     ﻿<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="format-detection" content="telephone=no">
@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <header>
     <div class="header-top">
         <div class="width-center">
-            <div class="header-logo "><img src="images/aebslogo.png" alt=""></div>
+            <div class="header-logo "><img src="images/logo.png" alt=""></div>
             <div class="header-title div-inline">
                 <strong>
                 	
@@ -77,14 +77,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </header>
 <div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
     <ul class="am-slides">
-        <li><img src="images/aebs20.jpg" alt="" ></li>
-        <li><img src="images/aebs11.jpg" alt="" ></li>
-        <li><img src="images/aebs9.jpg" alt="" ></li>
-        <li><img src="images/aebs15.jpg" alt="" ></li>
+        <li><img src="images/banner.jpg" alt="" ></li>
+        <li><img src="images/banner.jpg" alt="" ></li>
+        <li><img src="images/banner.jpg" alt="" ></li>
+        <li><img src="images/banner.jpg" alt="" ></li>
     </ul>
 </div>
 
-<%-- <section class="index-section">
+<section class="index-section">
     <div>
         <span></span>
         <span></span>
@@ -104,7 +104,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
 </section>
 
-<%--<section class="index-product">
+<section class="index-product">
     <main>
         <ul>
             <li class="index-active"><a href="#"></a></li>
@@ -199,7 +199,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
         </div>
     </div>
-</section>  --%>
+</section>
 
 ﻿<footer>
     <div>

@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*,com.entity.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -86,8 +86,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="article-position">新闻资讯</div>
         <ul>
             <li><a href="article_list.jsp">行业新闻</a></li>
-            <li><a href="article_list.jsp">家居百科</a></li>
-            <li><a href="article_list.jsp">公司新闻</a></li>
+            <li><a href="article_list.jsp">新产品</a></li>
+            <li><a href="article_list.jsp">促销活动</a></li>
         </ul>
         <div class="article-more-btn">
             <a href="article_list_more.jsp">MORE &#62; &#62;</a>
@@ -98,13 +98,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <ul>
             <li>
                 <div class="article-date">
-                    <strong>01</strong>
-                    <p>2017/05</p>
+                    <strong>
+                     <% News com = (News) request.getAttribute("news"); %>
+               		 <%= com.getHysj() %>
+                    </strong>
+                    
                 </div>
                 <div class="article-info">
                     <a href="article_list_content.jsp">
-                        <h3>家具有哪些类型?</h3>
-                        <p>按家具从风格上可以分为：现代家具、欧式古典家具、美式家具、中式古典家具（也就是红木家具），还有近两年比较流行的新古典...</p>
+                        <h3>
+                        <%= com.getHybt() %>
+                        </h3>
+                        <p><%= com.getHynr() %></p>
                     </a>
                 </div>
             </li>

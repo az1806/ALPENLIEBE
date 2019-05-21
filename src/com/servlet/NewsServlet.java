@@ -8,14 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dao.CompanyDao;
 import com.dao.NewsDao;
-import com.dao.impl.CompanyDaoImpl;
 import com.dao.impl.NewsDaoImpl;
-import com.entity.Company;
 import com.entity.News;
 
-public class IndexServlet extends HttpServlet {
+public class NewsServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -29,19 +26,16 @@ public class IndexServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		
-		CompanyDao comDao = new CompanyDaoImpl();
-		Company com = comDao.queryCompany();
-		request.setAttribute("company", com);
-		//request.getRequestDispatcher("/header.jsp").forward(request, response);
+		System.out.println("½øÈë HeadServlet");
+		//jdbc company 
 		
 		NewsDao aDao=new NewsDaoImpl();
 		News a = aDao.queryNews();
+		
 		request.setAttribute("news", a);
 		request.getRequestDispatcher("/article_list.jsp").forward(request, response);
+		
 	}
 
 	/**
