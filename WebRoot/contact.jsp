@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*,com.entity.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -33,113 +33,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="lib/raty/jquery.raty.js"></script>
 <script type="text/javascript" src="js/main.min.js?t=1"></script>
 </head>
-<body>
-<header>
-    <div class="header-top">
-        <div class="width-center">
-            <div class="header-logo "><img src="images/logo.png" alt=""></div>
-            <div class="header-title div-inline">
-                <strong>某某家具设计公司</strong>
-                <span>www.cssmoban.com</span>
-            </div>
-
-            <div class="search-box div-inline">
-                <div class="input-box"><input type="text" name="" placeholder="             请输入关键字"></div>
-                <div class="search-botton"></div>
-            </div>
-        </div>
-    </div>
-    <div class="header-nav">
-        <button class="am-show-sm-only am-collapsed font f-btn" data-am-collapse="{target: '.header-nav'}">Menu <i
-                class="am-icon-bars"></i></button>
-        <nav>
-        <ul class="header-nav-ul am-collapse am-in">
-            <li class="on"><a href="index.jsp" name="index">首页</a></li>
-            <li><a href="about.jsp" name="about">关于我们</a></li>
-            <li><a href="productlist.jsp" name="show">产品展示</a></li>
-            <li><a href="article_list.jsp" name="new">新闻资讯</a></li>
-            <li><a href="contact.jsp" name="message">联系我们</a>
-                <div class="secondary-menu">
-
-                    <ul><li><a href="message.jsp" class="message"></a></li></ul>
-                </div>
-            </li>
-        </ul>
-
-
-
-
-        </nav>
-    </div>
-
-</header>
-<div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
-    <ul class="am-slides">
-        <li><img src="images/banner.jpg" alt="" ></li>
-        <li><img src="images/banner.jpg" alt="" ></li>
-        <li><img src="images/banner.jpg" alt="" ></li>
-        <li><img src="images/banner.jpg" alt="" ></li>
-    </ul>
-</div>
-<div>
+  
+  <body>
+     <jsp:include page="top.jsp"></jsp:include>
+	<jsp:include page="banner.jsp"></jsp:include>
+	<% Company com = (Company) request.getAttribute("company");%>	
+	<div>
     <header class="header-article-list">
         <div class="contact-left">联系我们</div>
         <div class="contact-right">
-            <a href="index.jsp">首页 </a>&#62;<a href="#">联系我们</a>
+            <a href="center">首页 </a>&#62;<a href="contact">联系我们</a>
         </div>
     </header>
 
-    <main class="contact">
-        <iframe src="map.jsp" width="636" height="378" frameborder="0" scrolling="no"></iframe>
-        <ul>
-            <li>
-                <span><img src="images/contact1.png"/></span>
-                <h2>联系我们</h2>
-                <p>电话:0714-457878</p>
-            </li>
-            <li>
-                <span><img src="images/contact2.png"/></span>
-                <h2>公司地址</h2>
-                <p>地址:湖北省大冶市大冶大道116号金穗小区B栋201号</p>
-            </li>
-            <li>
-                <span><img src="images/contact3.png"/></span>
-                <h2>电子邮箱</h2>
-                <p>邮箱:123@dayeyunalading.com</p>
-            </li>
-        </ul>
-    </main>
-</div>
-﻿<footer>
-    <div>
-        <div class="footer-info">
-            <div class="footer-content">
-                <img src="images/qccode.png" alt="">
-               <div>
-                <p>招商热线:0714-8868331</p>
-                <div class="footer-box">
-                    <i class="icon-tel"></i>
-                    <span>公司电话:</span>
-                    <span>0714-8868331</span>
-                </div>
-                <div class="footer-box">
-                    <i class="icon-email"></i>
-                    <span>公司邮箱:</span>
-                    <span>123@dayeyunalading.com</span>
-                </div>
-                <div class="footer-box">
-                    <i class="icon-address"></i>
-                    <span>公司地址:</span>
-                    <span>湖北省XXX市XXX大道小区B栋201</span>
-                </div>
-               </div>
-            </div>
-        </div>
-        <style>
-        .footer-bottom a{color:#F1404B}
-        </style>
-        <div class="footer-bottom"><div style="text-align:center;color:#fff;line-height:100px;"><span><a href="http://www.haothemes.com/" target="_blank" title="好主题">好主题</a>提供 - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></span></div></div>
-    </div>
-</footer>
-</body>
+
+	<jsp:include page="foot.jsp"></jsp:include>
+  </body>
 </html>

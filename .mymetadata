@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="ALPENLIEBE"
-  id="myeclipse.1558337262414"
-  context-root="/ALPENLIEBE"
+  name="AEBS"
+  id="myeclipse.1558436033529"
+  context-root="/AEBS"
   j2ee-spec="5.0"
-  archive="ALPENLIEBE.war">
+  archive="AEBS.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>

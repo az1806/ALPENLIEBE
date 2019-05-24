@@ -8,7 +8,6 @@ import com.mysql.jdbc.ResultSet;
 import com.mysql.jdbc.Statement;
 
 public class JDBC {
-		
 	private static final String db_name = "xmsjdb"; 
 
 	public static int updateSQL(String sql) {

@@ -2,15 +2,26 @@ package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.BannerDao;
+import com.dao.CompanyDao;
+import com.dao.NewsTypeDao;
 import com.dao.NewsDao;
+import com.dao.impl.BannerDaoImpl;
+import com.dao.impl.CompanyDaoImpl;
+import com.dao.impl.NewsTypeDaoImpl;
 import com.dao.impl.NewsDaoImpl;
+import com.entity.Banner;
+import com.entity.Company;
+import com.entity.NewsType;
 import com.entity.News;
+import com.entity.Type;
 
 public class NewsServlet extends HttpServlet {
 
@@ -26,16 +37,37 @@ public class NewsServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		request.setCharacterEncoding("UTF-8");
-		System.out.println("½øÈë HeadServlet");
-		//jdbc company 
+		response.setCharacterEncoding("UTF-8");
 		
-		NewsDao aDao=new NewsDaoImpl();
-		News a = aDao.queryNews();
+		CompanyDao comDao = new CompanyDaoImpl();
+		Company com = comDao.queryCompany();
+		request.setAttribute("company", com);
 		
-		request.setAttribute("news", a);
-		request.getRequestDispatcher("/article_list.jsp").forward(request, response);
+		BannerDao ptd = new BannerDaoImpl();
+		List<Banner> pts= ptd.queryBanner();
+		request.setAttribute("banner", pts);
 		
+		NewsTypeDao c2 = new NewsTypeDaoImpl();
+		List<NewsType> ps2= c2.queryNewsType();
+		request.setAttribute("newstype", ps2);
+		
+		NewsDao pd=new NewsDaoImpl();
+		List<NewsType> pt1= pd.queryNewsType();
+		
+		int type1;
+		if(request.getParameter("type1")==null){
+			type1=pt1.get(0).getId();
+		}else{
+			type1=Integer.parseInt(request.getParameter("type1"));
+		}
+		NewsDao proDao =new NewsDaoImpl();
+		
+		List<News>plist1=proDao.queryNews(type1);
+		request.setAttribute("plist1", plist1);
+		request.setAttribute("pt1", pt1);
+		request.getRequestDispatcher("/news.jsp").forward(request, response);
 	}
 
 	/**
